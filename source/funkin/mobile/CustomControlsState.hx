@@ -1,7 +1,7 @@
 package funkin.mobile;
 
 #if mobile
-import flixel.addons.ui.FlxUIButton;
+import flixel.addons.ui.FlxButtonPlus;
 import flixel.text.FlxText;
 import flixel.FlxG;
 import flixel.FlxSprite;
@@ -17,9 +17,9 @@ class CustomControlsState extends MusicBeatSubstate {
     var _pad:FlxVirtualPad;
     var _hb:HitBox;
 
-    var exitButton:FlxUIButton;
-    var exportButton:FlxUIButton;
-    var importButton:FlxUIButton;
+    var exitButton:FlxButtonPlus;
+    var exportButton:FlxButtonPlus;
+    var importButton:FlxButtonPlus;
 
     var inputVari:FlxText;
     var upText:FlxText;
@@ -82,7 +82,7 @@ class CustomControlsState extends MusicBeatSubstate {
         changeSelection();
     }
 
-    function createButton(x:Float, y:Float, label:String, onClick:Void->Void):FlxUIButton {
+    function createButton(x:Float, y:Float, label:String, onClick:Void->Void):FlxButtonPlus {
         var button = new FlxUIButton(x, y, label, onClick);
         button.setLabelFormat('VCR OSD Mono', 24, FlxColor.BLACK, 'center');
         return button;
