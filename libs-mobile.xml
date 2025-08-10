@@ -6,7 +6,7 @@
 
 <!-- Flixel -->
 <git name="flixel" url="https://github.com/CodenameCrew/cne-flixel" />
-<git name="flixel-addons" url="https://github.com/CodenameCrew/cne-flixel-addons" />
+<git name="flixel-addons" url="https://github.com/Ethantobot11/flixel-addons" />
 <lib name="flixel-ui" version="2.6.1" />
 
 <!-- Other Libraries -->
