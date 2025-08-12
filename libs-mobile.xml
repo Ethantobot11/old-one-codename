@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <libraries>
 <!-- OpenFL & Lime (Required for Flixel) -->
-<lib name="openfl" url="https://github.com/th2l-devs/openfl" />
-<git name="lime" url="https://github.com/th2l-devs/lime" />
+<lib name="openfl" version="9.2.2" />
+<git name="lime" url="https://github.com/MaysLastPlays-Stuff/lime-h" />
 
 <!-- Flixel -->
 <git name="flixel" url="https://github.com/CodenameCrew/cne-flixel" />
