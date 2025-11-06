@@ -21,7 +21,7 @@
 	<lib name="format" />
 	<lib name="markdown" />
 	<lib name="nape-haxe4" />
-	<elseif name="android ||ios )">
+	<elseif name="android ||ios">
 		<libraries>
 <!-- OpenFL & Lime (Required for Flixel) -->
 		<git name="openfl" url="https://github.com/HomuHomu833-haxelibs/cne-openfl" />
