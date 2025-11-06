@@ -1,0 +1,79 @@
+name: Release
+on: workflow_dispatch
+
+permissions: write-all
+
+jobs:
+  build-android:
+    uses: ./.github/workflows/android.yml
+  build-ios:
+    uses: ./.github/workflows/iOS.yml
+  build-windows:
+    uses: ./.github/workflows/windows.yml
+  build-macos:
+    uses: ./.github/workflows/macos.yml
+  build-linux:
+    uses: ./.github/workflows/linux.yml
+    
+    
+
+  Releaser:
+    needs: [build-android, build-ios, build-windows, build-macos, build-linux]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Android Build
+        uses: actions/download-artifact@main
+        with:
+          name: Codename Engine Android
+          path: ${{ github.workspace }}
+
+      - name: Move Android File
+        run: mv "${{ github.workspace }}/CodenameEngine-release.apk" "${{ github.workspace }}/Codename Engine-Android.apk"
+
+      - name: Download iOS Build
+        uses: actions/download-artifact@main
+        with:
+          name: Codename Engine iOS
+          path: ${{ github.workspace }}
+
+      - name: Move iOS File
+        run: mv "${{ github.workspace }}/CodenameEngine.ipa" "${{ github.workspace }}/Codename Engine-iOS.ipa"
+
+      - name: Download windows Build
+        uses: actions/download-artifact@main
+        with:
+          name: Codename Engine windows
+          path: ${{ github.workspace }}
+
+      - name: Move windows File
+        run: mv "${{ github.workspace }}/CodenameEngine.zip" "${{ github.workspace }}/Codename Engine-windows.zip"
+
+      - name: Download macos Build
+        uses: actions/download-artifact@main
+        with:
+          name: Codename Engine macos
+          path: ${{ github.workspace }}
+
+      - name: Move iOS File
+        run: mv "${{ github.workspace }}/CodenameEngine.tar" "${{ github.workspace }}/Codename Engine-macos.tar"
+
+      - name: Download linux Build
+        uses: actions/download-artifact@main
+        with:
+          name: Codename Engine linux
+          path: ${{ github.workspace }}
+
+      - name: Move iOS File
+        run: mv "${{ github.workspace }}/CodenameEngine.tar" "${{ github.workspace }}/Codename Engine-linux.tar"
+
+      - name: Publish The Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: "v1.0.1"
+          tag_name: "v1.0.1"
+          prerelease: false
+          files: |
+            ${{ github.workspace }}/*.apk
+            ${{ github.workspace }}/*.ipa
+            ${{ github.workspace }}/*.zip
+            ${{ github.workspace }}/*.tar
