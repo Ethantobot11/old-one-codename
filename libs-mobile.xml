@@ -18,13 +18,13 @@
 		<!-- Documentation and other features -->
 		<git name="away3d" url="https://github.com/CodenameCrew/away3d" />
 		<!-- <lib name="dox" /> -->
-		<lib name="markdown" />
-		<lib name="hxcpp-debug-server" />
+		<lib name="markdown" version=null />
+		<lib name="hxcpp-debug-server" version=null />
 
-		<lib name="nape-haxe4" />
+		<lib name="nape-haxe4" version=null />
 
-		<lib name="format" />
-		<lib name="hxp" />
+		<lib name="format" version=null />
+		<lib name="hxp" version=null />
 
 		<git name="hxcpp" url="https://github.com/HomuHomu833-haxelibs/hxcpp" />
 </libraries>
