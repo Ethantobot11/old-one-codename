@@ -21,7 +21,7 @@
 		<git name="markdown" url="https://github.com/HaxeFoundation/haxe-markdown" />
 		<lib name="hxcpp-debug-server" />
 
-		<git name="nape-haxe4" url="https://github.com/HaxeFlixel/nape-haxe4" />
+		<lib name="nape-haxe4" />
 
 		<git name="format" url="https://github.com/HaxeFoundation/format" />
 		<git name="hxp" url="https://github.com/openfl/hxp" />
